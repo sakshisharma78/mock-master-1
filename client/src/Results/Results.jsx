@@ -24,7 +24,7 @@ function Results() {
         throw new Error('Question and answer data not found in localStorage');
       }
 
-      const response = await fetch("https://mock-master-9dhj.onrender.com/api/result/result", {
+      const response = await fetch("https://mock-master-phfq.onrender.com/api/result/result", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
