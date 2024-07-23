@@ -18,7 +18,7 @@ router.post('/getResume', getuser, async (req, res) => {
     const data = fs.readFileSync(name, 'utf8');
   
     
-  const genAI = new GoogleGenerativeAI("AIzaSyBeGLlUf3YWvVs0m2chBi528AsZQZnJ4vw");
+  const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
   
   async function run() {
     // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts

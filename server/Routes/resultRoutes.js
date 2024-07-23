@@ -12,7 +12,7 @@ router.post('/result', getuser, async (req, res) => {
     const stringAnswer = JSON.stringify(questionAnswer);
 
     async function run() {
-      const genAI = new GoogleGenerativeAI("AIzaSyBeGLlUf3YWvVs0m2chBi528AsZQZnJ4vw");
+      const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
 
       // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash"});
