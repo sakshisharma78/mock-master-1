@@ -11,7 +11,7 @@
     min-height: 100vh;
     font-family: 'Ubuntu', sans-serif;
     overflow-x: hidden;
-    position: relative; /* Ensure relative positioning for star animation */
+    position: relative;
 }
 
 /* Star animation */
@@ -23,7 +23,7 @@
     height: 100%;
     background: url('https://www.transparenttextures.com/patterns/stardust.png');
     z-index: -1;
-    pointer-events: none; /* Ensure stars don't interfere with content interaction */
+    pointer-events: none;
     animation: twinkling 10s infinite;
 }
 
@@ -32,21 +32,22 @@
         background-position: 0 0;
     }
     100% {
-        background-position: 10000px 5000px; /* Adjust background position for twinkling effect */
+        background-position: 10000px 5000px;
     }
 }
 
 .profileContent {
     display: flex;
+    flex-direction: column;
     width: 100%;
-    justify-content: center;
-    align-items: flex-start;
     padding: 20px;
+    align-items: center;
 }
 
 /* Left Panel styles */
 .leftPanel {
-    width: 30%;
+    width: 100%;
+    max-width: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,6 +56,7 @@
     background-color: #1F1F3D;
     transition: all 0.3s ease;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
 }
 
 .leftPanel h2 {
@@ -70,7 +72,8 @@
 
 .leftPanel button {
     margin-top: 15px;
-    width: 10rem;
+    width: 100%;
+    max-width: 200px;
     height: 30px;
     padding: 2px;
     border-radius: 5px;
@@ -101,7 +104,8 @@
 
 /* Right Panel styles */
 .rightPanel {
-    width: 70%;
+    width: 100%;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
     margin-left: 20px;
@@ -127,15 +131,15 @@ h3 {
 .cardContainer {
     display: flex;
     flex-wrap: wrap;
+    gap: 20px; /* Add gap between cards */
+    justify-content: center; /* Center cards */
 }
 
 .card {
-    flex: 1 0 200px;
+    flex: 1 1 200px;
     background: #252545;
     border-radius: 8px;
     padding: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
     text-align: center;
     border: 0.1px solid whitesmoke;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -152,8 +156,10 @@ h3 {
 }
 
 .profilePic {
-    width: 256px;
-    height: 256px;
+    width: 100%;
+    max-width: 256px;
+    height: auto;
+    aspect-ratio: 1 / 1; /* Maintain aspect ratio */
     border-radius: 50%;
     margin-bottom: 10px;
     object-fit: cover;
@@ -178,6 +184,8 @@ h3 {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: opacity 0.3s ease;
+    width: 90%;
+    max-width: 500px; /* Adjust max-width */
 }
 
 .editForm {
@@ -242,4 +250,70 @@ h3 {
 .close:hover, .close:focus {
     color: #1565c0;
     text-decoration: none;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .leftPanel, .rightPanel {
+        width: 100%;
+        max-width: none;
+        margin-left: 0;
+    }
+
+    .profileContent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cardContainer {
+        gap: 10px; /* Reduce gap on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .profilePic {
+        width: 80%;
+        max-width: 200px;
+    }
+
+    .leftPanel, .rightPanel {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .editModal {
+        width: 90%;
+        max-width: 400px; /* Adjust max-width */
+    }
+
+    h3 {
+        font-size: 1rem; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .profilePic {
+        width: 100%;
+        max-width: 150px;
+    }
+
+    .leftPanel button {
+        width: 100%;
+        max-width: 150px;
+    }
+
+    .card {
+        flex: 1 1 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .editModal {
+        width: 90%;
+        max-width: 300px; /* Adjust max-width */
+    }
+
+    h3 {
+        font-size: 0.9rem; /* Adjust font size */
+    }
 }

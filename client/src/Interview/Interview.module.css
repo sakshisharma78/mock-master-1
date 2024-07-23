@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 /* General styles */
-.bg1{
+.bg1 {
   position: absolute;
   top: 0;
   left: 30%;
   height: 50vh;
+  animation: fadeInRight 2s ease-in-out; /* Apply animation */
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -30,6 +32,7 @@ body {
   position: relative;
   padding: 20px;
   border-radius: 10px;
+  animation: slideInBottom 1s ease-in-out; /* Apply animation */
 }
 
 .response {
@@ -77,7 +80,7 @@ body {
   aspect-ratio: 1;
   background: #3FB8AF;
   position: relative;
-  animation: l8-0 2.5s infinite linear alternate;
+  animation: l8-0 2.5s infinite linear alternate, rotate 10s linear infinite; /* Apply animations */
 }
 
 .loader:before {
@@ -111,5 +114,100 @@ body {
   }
   80%, 100% {
     transform: translate(100%) rotate(-180deg);
+  }
+}
+
+/* Additional animations */
+@keyframes fadeInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    transform: translateY(0);
+  }
+  30%, 50%, 70% {
+    transform: translateY(-15px);
+  }
+  90% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+  .bg1 {
+    left: 20%;
+    height: 40vh;
+  }
+
+  .questionbdr {
+    height: 35vh;
+    padding: 15px;
+    animation: slideInBottom 1s ease-in-out; /* Ensure animation applies on resize */
+  }
+
+  .loader {
+    width: 15vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .bg1 {
+    left: 10%;
+    height: 30vh;
+  }
+
+  .questionbdr {
+    height: 30vh;
+    padding: 10px;
+    animation: slideInBottom 1s ease-in-out; /* Ensure animation applies on resize */
+  }
+
+  .loader {
+    width: 12vh;
+  }
+
+  .mic {
+    margin-top: 5vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .bg1 {
+    left: 0;
+    height: 20vh;
+  }
+
+  .questionbdr {
+    height: 25vh;
+    padding: 5px;
+    animation: slideInBottom 1s ease-in-out; /* Ensure animation applies on resize */
+  }
+
+  .loader {
+    width: 10vh;
+  }
+
+  .mic {
+    margin-top: 2vh;
   }
 }

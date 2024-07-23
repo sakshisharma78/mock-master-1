@@ -55,15 +55,17 @@
 
 .scoreContainer {
   display: flex;
-  justify-content: space-around;
+  justify-content: center; /* Center items */
   align-items: center;
+  flex-direction: column; /* Stack items vertically */
   width: 100%;
   margin-top: 2rem;
 }
 
 .pieChart {
-  width: 50%;
+  width: 100%;
   max-width: 300px;
+  margin-bottom: 1rem; /* Add margin for spacing */
 }
 
 .feedbackCard {
@@ -71,10 +73,11 @@
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  width: 50%;
+  width: 100%;
   max-width: 400px;
   text-align: center;
   position: relative; /* Ensure card is relative for absolute positioning of stars */
+  margin: 0 auto; /* Center the card */
 }
 
 .feedbackTitle {
@@ -150,5 +153,58 @@
   100% {
     opacity: 0;
     transform: scale(0.5);
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .scoreContainer {
+    flex-direction: column;
+  }
+
+  .pieChart {
+    width: 80%;
+    max-width: 250px;
+  }
+
+  .feedbackCard {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .pieChart {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .feedbackCard {
+    width: 95%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .pieChart {
+    width: 100%;
+    max-width: 150px;
+  }
+
+  .feedbackCard {
+    width: 100%;
+    max-width: 280px;
   }
 }

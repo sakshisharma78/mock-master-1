@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Joti+One&display=swap");
 
+/* General styles */
 .container {
   height: 83vh;
   width: 99%;
@@ -34,7 +35,7 @@ body::before {
   position: absolute;
   top: 0;
   right: 0;
-  /* animation: fadeInRight 2s ease-in-out; */
+  animation: fadeInRight 2s ease-in-out; /* Apply animation */
 }
 
 /* Individual star animations */
@@ -44,112 +45,47 @@ body::before {
   animation: floatUpDown 5s infinite ease-in-out alternate;
 }
 
-.st1 {
-  position: absolute;
-  top: 50vh;
-  left: 50vw;
-}
-.st2 {
-  position: absolute;
-  bottom: 10vh;
-  left: 40vw;
-}
-.st3 {
-  position: absolute;
-  top: 10vh;
-  right: 23vw;
-}
-.st4 {
-  position: absolute;
-  bottom: 75vh;
-  left: 90vw;
-}
-.st5 {
-  position: absolute;
-  top: 50vh;
-  left: 15vw;
-}
-.st6 {
-  position: absolute;
-  top: 85vh;
-  right: 15vw;
-}
+.st1 { top: 50vh; left: 50vw; }
+.st2 { bottom: 10vh; left: 40vw; }
+.st3 { top: 10vh; right: 23vw; }
+.st4 { bottom: 75vh; left: 90vw; }
+.st5 { top: 50vh; left: 15vw; }
+.st6 { top: 85vh; right: 15vw; }
 
 @keyframes floatUpDown {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-20px);
-  }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
 }
 
-.img1,
-.img2,
-.img3 {
+.img1, .img2, .img3 {
   height: 200px;
   width: 200px;
   position: absolute;
   animation: rotate 10s linear infinite, fadeIn 2s ease-in-out;
 }
 
-.img1 {
-  position: absolute;
-  top: 10vh;
-  left: 0;
-}
-.img2 {
-  position: absolute;
-  top: 15vh;
-  right: 0;
-}
-.img3 {
-  position: absolute;
-  bottom: 0;
-  left: 5vw;
-}
+.img1 { top: 10vh; left: 0; }
+.img2 { top: 15vh; right: 0; }
+.img3 { bottom: 0; left: 5vw; }
 
 @keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-.hey,
-.hey1,
-.hey2 {
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hey, .hey1, .hey2 {
   font-family: "Joti One", serif;
   animation: bounceIn 1.5s ease-in-out;
 }
 
-.hey {
-  font-size: 48px;
-  color: #defb6b;
-  position: absolute;
-  left: 37vw;
-  animation-delay: 0.5s;
-}
-
-.hey1 {
-  font-size: 38px;
-  color: white;
-  position: absolute;
-  left: 30vw;
-  top: 40vh;
-  animation-delay: 1s;
-}
-
-.hey2 {
-  font-size: 38px;
-  color: white;
-  position: absolute;
-  left: 30vw;
-  top: 30vh;
-  animation-delay: 1s;
-}
+.hey { font-size: 48px; color: #defb6b; position: absolute; left: 37vw; animation-delay: 0.5s; }
+.hey1 { font-size: 38px; color: white; position: absolute; left: 30vw; top: 40vh; animation-delay: 1s; }
+.hey2 { font-size: 38px; color: white; position: absolute; left: 30vw; top: 30vh; animation-delay: 1s; }
 
 .btn {
   cursor: pointer;
@@ -175,31 +111,72 @@ body::before {
 }
 
 @keyframes fadeInRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
 }
 
 @keyframes bounceIn {
-  0%,
-  20%,
-  40%,
-  60%,
-  80%,
-  100% {
-    transform: translateY(0);
+  0%, 20%, 40%, 60%, 80%, 100% { transform: translateY(0); }
+  30%, 50%, 70% { transform: translateY(-15px); }
+  90% { transform: translateY(-8px); }
+}
+
+@keyframes slideInBottom {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+  .img1, .img2, .img3 {
+    height: 150px;
+    width: 150px;
   }
-  30%,
-  50%,
-  70% {
-    transform: translateY(-15px);
+
+  .hey { font-size: 36px; left: 30vw; }
+  .hey1, .hey2 { font-size: 30px; left: 25vw; }
+
+  .btn {
+    width: 35vw;
+    height: 9vh;
+    font-size: 1.2rem;
+    left: 30vw;
+    bottom: 15vh;
   }
-  90% {
-    transform: translateY(-8px);
+}
+
+@media (max-width: 768px) {
+  .img1, .img2, .img3 {
+    height: 120px;
+    width: 120px;
+  }
+
+  .hey { font-size: 28px; left: 20vw; }
+  .hey1, .hey2 { font-size: 24px; left: 15vw; }
+
+  .btn {
+    width: 40vw;
+    height: 8vh;
+    font-size: 1rem;
+    left: 20vw;
+    bottom: 10vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .img1, .img2, .img3 {
+    height: 100px;
+    width: 100px;
+  }
+
+  .hey { font-size: 24px; left: 10vw; }
+  .hey1, .hey2 { font-size: 20px; left: 5vw; }
+
+  .btn {
+    width: 45vw;
+    height: 7vh;
+    font-size: 0.9rem;
+    left: 10vw;
+    bottom: 5vh;
   }
 }
