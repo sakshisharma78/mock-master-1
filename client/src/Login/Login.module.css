@@ -5,63 +5,55 @@
   top: 25vh;
   color: white;
   position: absolute;
-  right: 5%;
-  padding: 20px; /* Reduced padding for smaller screens */
-  background-color: rgba(0, 0, 0, 0.082);
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease;
-  animation: fadeInUp 1s ease-in-out;
-  width: 90%; /* Adjust width for responsiveness */
-  max-width: 500px; /* Max width to maintain form size on larger screens */
+  right: 5vh;
+  padding: 40px; /* Add padding for better spacing */
+  background-color: rgba(0, 0, 0, 0.082); /* Semi-transparent background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Box shadow for depth */
+  transition: all 0.3s ease; /* Smooth transition */
+  animation: fadeInUp 1s ease-in-out; /* Fade in animation */
 }
 
 .bac {
   top: 0;
   z-index: 111;
   position: absolute;
-  animation: fadeIn 2s ease-in-out;
-  width: 100%; /* Full width for background */
-  height: 100%; /* Full height for background */
+  animation: fadeIn 2s ease-in-out; /* Fade in animation for background */
 }
 
 .qote {
   display: flex;
-  flex-direction: column; /* Stack quote items vertically on smaller screens */
   align-items: center;
 }
 
 .qotefront {
   font-family: "Ubuntu", sans-serif;
-  color: salmon;
-  font-size: 2rem; /* Responsive font size */
+  color: salmon; /* Adjust quote front color */
+  font-size: xx-large;
   margin-bottom: 15px;
-  padding-left: 0; /* Remove padding on smaller screens */
-  text-align: center; /* Center align text */
-  animation: fadeInUp 1s ease-in-out;
+  padding-left: 20px;
+  animation: fadeInUp 1s ease-in-out; /* Fade in animation */
 }
 
 .qotefront1 {
-  font-size: 1rem; /* Responsive font size */
+  font-size: smaller;
   font-family: "Ubuntu", sans-serif;
   text-decoration: none;
   color: white;
   margin-bottom: 9px;
-  padding-left: 0; /* Remove padding on smaller screens */
-  text-align: center; /* Center align text */
-  animation: fadeInUp 1s ease-in-out;
+  padding-left: 20px;
+  animation: fadeInUp 1s ease-in-out; /* Fade in animation */
 }
 
 .recov {
   margin-top: 2.5vh;
   color: gray;
   font-family: "Ubuntu", sans-serif;
-  font-size: 0.9rem; /* Responsive font size */
+  font-size: smaller;
   position: absolute;
-  padding-right: 20px; /* Adjust padding for smaller screens */
-  right: 0;
-  animation: fadeInUp 1s ease-in-out;
-  text-align: center; /* Center align text */
+  padding-right: 40px;
+  right: 5px;
+  animation: fadeInUp 1s ease-in-out; /* Fade in animation */
 }
 
 input::placeholder {
@@ -73,42 +65,40 @@ input.email,
 input.password {
   font-family: "Ubuntu", sans-serif;
   border: none;
-  height: 50px; /* Adjust height for smaller screens */
-  margin-top: 15px; /* Adjust margin for smaller screens */
-  width: 100%; /* Full width for input fields */
-  max-width: 350px; /* Max width to maintain input size */
+  height: 60px;
+  margin-top: 20px;
+  width: 334px;
   border-radius: 9px;
-  padding: 0 10px; /* Adjust padding for input fields */
-  background-color: rgba(255, 255, 255, 0.9);
-  transition: all 0.3s ease;
+  padding: 0 15px; /* Adjust padding for input fields */
+  background-color: rgba(255, 255, 255, 0.9); /* Light background */
+  transition: all 0.3s ease; /* Smooth transition */
 }
 
 .email:focus,
 .password:focus {
   outline: none;
-  box-shadow: 0 0 10px salmon;
+  box-shadow: 0 0 10px salmon; /* Focus effect */
 }
 
 .siginbtn {
-  width: 100%;
-  max-width: 350px;
-  height: 50px; /* Adjust height for smaller screens */
+  width: 350px;
+  height: 60px;
   background-color: rgb(52, 52, 212);
   color: white;
   margin-top: 10vh;
   border-radius: 9px;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1rem; /* Responsive font size */
-  font-weight: 600;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  animation: slideInRight 1s ease-in-out;
+  transition: all 0.3s ease; /* Smooth transition */
+  font-size: 18px; /* Increase font size for better visibility */
+  font-weight: 600; /* Bold font weight */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  animation: slideInRight 1s ease-in-out; /* Slide in animation */
 }
 
 .siginbtn:hover {
-  background-color: rgb(32, 32, 192);
-  transform: scale(1.05);
+  background-color: rgb(32, 32, 192); /* Darker hover color */
+  transform: scale(1.05); /* Scale effect on hover */
 }
 
 /* Star animation */
@@ -182,95 +172,5 @@ input.password {
   to {
     opacity: 1;
     transform: translateX(0);
-  }
-}
-
-/* Media queries for responsiveness */
-@media (max-width: 1024px) {
-  .form {
-    padding: 20px; /* Adjust padding for smaller screens */
-  }
-
-  .qotefront {
-    font-size: 1.5rem; /* Smaller font size */
-  }
-
-  .qotefront1 {
-    font-size: 0.9rem; /* Smaller font size */
-  }
-
-  .recov {
-    font-size: 0.8rem; /* Smaller font size */
-    padding-right: 10px; /* Adjust padding for smaller screens */
-  }
-
-  input.email,
-  input.password {
-    height: 45px; /* Adjust height */
-  }
-
-  .siginbtn {
-    height: 45px; /* Adjust height */
-    font-size: 0.9rem; /* Smaller font size */
-  }
-}
-
-@media (max-width: 768px) {
-  .form {
-    padding: 15px; /* Reduce padding */
-    top: 20vh; /* Adjust position */
-  }
-
-  .qotefront {
-    font-size: 1.2rem; /* Smaller font size */
-  }
-
-  .qotefront1 {
-    font-size: 0.8rem; /* Smaller font size */
-  }
-
-  .recov {
-    font-size: 0.7rem; /* Smaller font size */
-    padding-right: 5px; /* Adjust padding for smaller screens */
-  }
-
-  input.email,
-  input.password {
-    height: 40px; /* Adjust height */
-  }
-
-  .siginbtn {
-    height: 40px; /* Adjust height */
-    font-size: 0.8rem; /* Smaller font size */
-  }
-}
-
-@media (max-width: 480px) {
-  .form {
-    padding: 10px; /* Further reduce padding */
-    top: 15vh; /* Adjust position */
-  }
-
-  .qotefront {
-    font-size: 1rem; /* Smaller font size */
-  }
-
-  .qotefront1 {
-    font-size: 0.7rem; /* Smaller font size */
-  }
-
-  .recov {
-    font-size: 0.6rem; /* Smaller font size */
-    padding-right: 0; /* Remove padding */
-  }
-
-  input.email,
-  input.password {
-    height: 35px; /* Adjust height */
-  }
-
-  .siginbtn {
-    height: 35px; /* Adjust height */
-    font-size: 0.7rem; /* Smaller font size */
   }
 }
